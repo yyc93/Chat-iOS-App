@@ -34,7 +34,6 @@ NSString *const kAccountKey     = @"7yvNe17TnjNUqDoPwfqp";
     [QBSettings setAuthKey:kAuthKey];
     [QBSettings setAuthSecret:kAuthSecret];
     [QBSettings setAccountKey:kAccountKey];
-    [QBSettings setChatDNSLookupCacheEnabled:YES];
     
     // enabling carbons for chat
     [QBSettings setCarbonsEnabled:YES];
@@ -44,7 +43,7 @@ NSString *const kAccountKey     = @"7yvNe17TnjNUqDoPwfqp";
     
     // Enables detailed XMPP logging in console output
     [QBSettings enableXMPPLogging];
-    
+    [ServicesManager enableLogging:NO];
     // app was launched from push notification, handling it
     if (launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]) {
         ServicesManager.instance.notificationService.pushDialogID = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey][kPushNotificationDialogIdentifierKey];
